@@ -8,7 +8,7 @@ class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {
-		BigDecimalUtils.roundHalfUp(calculateDTO.getCetMonth())
+
 	}
 
 }
