@@ -1,9 +1,12 @@
 package enums;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum Gender {
-    MASCULINE,
-    FEMININE
+    MASCULINE("masculine"),
+    FEMININE("feminine");
+    private String description;
 }
