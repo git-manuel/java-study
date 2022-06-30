@@ -1,4 +1,4 @@
-package com.example.demo.core.collections;
+package com.example.core.collections;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

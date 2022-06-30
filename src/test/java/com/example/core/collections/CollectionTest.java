@@ -1,6 +1,6 @@
-package com.example.demo.core.collections;
+package com.example.core.collections;
 
-import entity.User;
+import com.example.spring.entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

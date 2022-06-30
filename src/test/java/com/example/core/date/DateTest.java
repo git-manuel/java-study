@@ -1,10 +1,8 @@
-package com.example.demo.core.date;
+package com.example.core.date;
 
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-import java.time.Month;
-import java.time.Year;
 import java.time.ZoneId;
 import java.time.temporal.TemporalAdjusters;
 

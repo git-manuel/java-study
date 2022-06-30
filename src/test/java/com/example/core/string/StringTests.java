@@ -1,4 +1,4 @@
-package com.example.demo.core.string;
+package com.example.core.string;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
