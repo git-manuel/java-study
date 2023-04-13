@@ -7,7 +7,7 @@ class UserRepositoryTest {
     private void fuc (){
         extracted();
         System.out.println(" hello");
-        System.out.printlnhello");
+       //System.out.printlnhello");
         System.out.println(" hello");
     }
 
