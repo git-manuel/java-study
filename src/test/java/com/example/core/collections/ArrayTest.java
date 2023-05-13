@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class ArrayTest {
         }
     }
 
+
     @Test
     void initiazie2DArrayBySplit() {
         String[] entryArray = entry.split(" ");
@@ -44,6 +46,7 @@ public class ArrayTest {
             System.out.println();
         }
     }
+
 
     @Test
     void sort2DArrayInverse() {
@@ -74,6 +77,7 @@ public class ArrayTest {
     }
 
 
+
     @Test
     void sort2DArrayInverse2() {
         int[][] rectangle = {
@@ -97,6 +101,16 @@ public class ArrayTest {
             System.out.println("");
         }
     }
+
+    @Test
+    void turnArrayIntoList() {
+        int[] arr = {1, 2, 3, 4, 5};
+
+        Arrays.stream(arr).sorted()
+        .forEach((a) -> System.out.println( a +100));
+    }
+
+
 
 
 }

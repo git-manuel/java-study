@@ -18,6 +18,7 @@ public class MapTest {
     private void init() {
         map.put("hello", 1);
         map.put("Brazil", 4);
+        map.put("Brazil", 400);
         map.put("Chile", 3);
         map.put("France", 3);
         map.put("Argentina", 2);
@@ -58,7 +59,6 @@ public class MapTest {
 
     }
 
-
     @Test
     //Entry is a object that represents both key and value
     public void IterateUsingEntryForach() {
@@ -75,39 +75,22 @@ public class MapTest {
         );
     }
 
-    @Test
-    //Entry is a object that represents both key and value
-    public void IterateUsingEntryStreams
-            () {
-
-
-        map.entrySet().stream().forEach(
-                (entry) -> {
-                    System.out.println(entry.getKey());
-                }
-        );
-    }
-
-    @Test
-    public void sortMapByKeyUsingList() {
-
-
-        var keys = new ArrayList<>(map.keySet());
-
-        Collections.sort(keys, Comparator.reverseOrder());
-        keys.forEach(System.out::println);
-    }
-
 
     @Test
     public void sortMapByKeyUsingStreamReversed() {
-
-
         var newMap = map.entrySet()
                 .stream()
-                .sorted(Map.Entry.comparingByKey(Comparator.reverseOrder())).collect(Collectors.toMap(
-                        Map.Entry::getKey, Map.Entry::getValue, (old, newValue) -> old, LinkedHashMap::new
+                .sorted(Map.Entry.comparingByKey(Comparator.reverseOrder())) // sort
+                .collect(Collectors.toMap( // collect
+                        Map.Entry::getKey, Map.Entry::getValue, (old, newValue) -> newValue, LinkedHashMap::new
                 ));
+        newMap.forEach((key, value) -> System.out.println(key + ", " + value));
     }
 
+    @Test
+    public void sortMapByValueUsingStreamReversed() {
+        map.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (newValue, old) -> old, LinkedHashMap::new));
+    }
 }
