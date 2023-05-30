@@ -24,6 +24,13 @@ public void init(){
     students.add( new Student(2,"Daniel",70.00));
     students.add( new Student(1,"Alice",40.00));
 
+
+
+}
+
+@Test
+ void has2hCode (){
+
 }
 @Test
 
@@ -48,6 +55,7 @@ No two students have the same ID.
 */
 
     @ToString
+
     class Student implements Comparable <Student>{
         private int id;
         private String fname;
