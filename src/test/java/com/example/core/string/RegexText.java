@@ -6,6 +6,8 @@ import org.junit.jupiter.api.TestTemplate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegexText {
@@ -28,6 +30,16 @@ public class RegexText {
         var pattern = Pattern.compile("[^\\s]{2}\\s[^\\s]{2}\\s[^\\s]{2}");
 
         assertTrue(  pattern.matcher("__ __ __").find());
+    }
+
+    @Test
+    public void  removeDuplicateWordsCaseInsensitive(){
+        String source = "Hello hello Ab aB";
+        String regex = "(?i)(\\b\\w+)(\\s\\1\\b)+";
+
+        System.out.println(source.replaceAll(regex,"$2"));
+
+
     }
 
 
