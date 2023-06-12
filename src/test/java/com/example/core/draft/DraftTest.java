@@ -66,8 +66,8 @@ public class DraftTest {
     }
 
     @Test
-    public void sortList(){
-        
+    public void sortList() {
+
     }
 
     @Test
@@ -85,24 +85,13 @@ public class DraftTest {
 
         Collections.sort(employeeList);
 
-        employeeList.stream().sorted( compareByName);
+        employeeList.stream().sorted(compareByName);
 
         for (Employee employee : employeeList) {
             System.out.println(employee);
         }
     }
 
-    @Test
-    public void sortByNameDescIfEqualSortByIdCresUsingComparetor() {
-
-        employeeList.sort(compareByName.reversed().thenComparing(compareById));
-
-
-        for (Employee employee : employeeList) {
-            System.out.println(employee);
-        }
-
-    }
 
 
     static class Employee implements Comparable<Employee> {
@@ -162,4 +151,6 @@ public class DraftTest {
         private String password;
 
     }
+
+
 }

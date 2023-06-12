@@ -77,7 +77,6 @@ public class ArrayTest {
     }
 
 
-
     @Test
     void sort2DArrayInverse2() {
         int[][] rectangle = {
@@ -107,10 +106,8 @@ public class ArrayTest {
         int[] arr = {1, 2, 3, 4, 5};
 
         Arrays.stream(arr).sorted()
-        .forEach((a) -> System.out.println( a +100));
+                .forEach((a) -> System.out.println(a + 100));
     }
-
-
 
 
 }

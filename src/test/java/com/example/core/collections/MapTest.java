@@ -2,6 +2,7 @@ package com.example.core.collections;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.scheduling.support.SimpleTriggerContext;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.*;
@@ -38,11 +39,7 @@ public class MapTest {
         assertTrue(map.containsKey("hello"));
     }
 
-    @Test
-    public void verifyIfValueExist() {
 
-        assertTrue(map.containsKey("hello"));
-    }
 
     @Test
     public void cantModifyMapWhileInLoop() {
@@ -68,11 +65,7 @@ public class MapTest {
             System.out.println(entry.getKey());
         }
 
-        map.entrySet().stream().forEach(
-                (entry) -> {
-                    System.out.println(entry.getKey());
-                }
-        );
+        map.forEach((key, value) -> System.out.println(key));
     }
 
 
@@ -85,6 +78,8 @@ public class MapTest {
                         Map.Entry::getKey, Map.Entry::getValue, (old, newValue) -> newValue, LinkedHashMap::new
                 ));
         newMap.forEach((key, value) -> System.out.println(key + ", " + value));
+
+
     }
 
     @Test

@@ -130,6 +130,16 @@ class StringTests {
     }
 
     @Test
+        //Remove one charater  in from string in position i
+    void removeCharacterFromPosition() {
+
+        String s = "abcd";
+        int i = 2;
+        System.out.println(s.replaceFirst( s.substring(i,i+1),"")); // string , string
+
+    }
+
+    @Test
     void compareLiteralAndObjectString(){
 
         System.out.println( "hello".equals(new String("hello")));
